@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../saas/base/-container.scss"
+    ],
+    "names": [],
+    "file": "-container.min.css"
+}

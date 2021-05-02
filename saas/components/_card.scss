@@ -1,0 +1,45 @@
+.card {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--card-gap));
+  margin-left: calc(-1 * var(--card-gap));
+}
+& .item {
+  flex-basis: calc(100% / 3 - var(--card-gap));
+  margin-left: var(--card-gap);
+  margin-top: var(--card-gap);
+}
+.item {
+  outline: 1px;
+  transition: box-shadow var(--animation);
+}
+&:nth-child(3n) {
+  margin-right: 0;
+}
+&:hover {
+  box-shadow: var(--box-shadow);
+}
+&:focus-within {
+  outline: 3px solid;
+  box-shadow: var(--box-shadow);
+}
+.card__content {
+  padding: 20px 0 24px 20px;
+  border: 1px solid #eee;
+}
+.card__text {
+  margin-top: 10px;
+}
+.card__link {
+  text-decoration: none;
+  transition: color var(--animation);
+  position: relative;
+  transition: box-shadow var(--animation);
+}
+&:focus {
+  outline: 1px;
+  box-shadow: var(--box-shadow);
+}

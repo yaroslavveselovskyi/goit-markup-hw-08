@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,gBAAgB,CAAC;EACf,QAAQ,EAAE,mBAAmB;EAC7B,IAAI,EAAE,qBAAqB;EAC3B,IAAI,EAAE,wBAAwB;EAC9B,OAAO,EAAE,YAAY;EACrB,MAAM,EAAE,YAAY;EACpB,MAAM,EAAE,cAAc;EACtB,KAAK,EAAE,cAAc;EACrB,QAAQ,EAAE,MAAM;CACjB",
+    "sources": [
+        "../saas/components/visually-hidden.scss"
+    ],
+    "names": [],
+    "file": "visually-hidden.css"
+}
