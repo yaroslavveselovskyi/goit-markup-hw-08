@@ -1,6 +1,133 @@
 .menu {
-  display: inline-flex;
+  display: flex;
 }
 .menu__link {
   margin-left: 50px;
+}
+.menu__button {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  transform: translateX(400%);
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+
+  .icon__menu {
+    display: block;
+    z-index: 5;
+  }
+
+  .is-open .icon__cross {
+    display: block;
+
+    .icon__menu {
+      display: none;
+    }
+  }
+
+  :hover .icon__menu,
+  :focus .icon__menu {
+    fill: var(--accent-color);
+  }
+}
+.menu__container {
+  display: block;
+  position: relative;
+  flex-direction: column;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  padding: 48px, 40px;
+  text-align: start;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.17;
+  letter-spacing: 0.02;
+  color: rgb(33, 33, 33);
+
+  @media screen and (max-width: 767px) {
+    display: none;
+    position: absolute;
+
+    left: 0;
+    width: 100%;
+
+    &.is-open {
+      display: block;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+.menu__overlay {
+  display: flex;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+.menu__list {
+  text-decoration: none;
+  list-style-type: none;
+  margin-bottom: 30px;
+}
+.menu__mail {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.16;
+  letter-spacing: 0.02;
+  color: #757575;
+}
+.menu__tel {
+  display: block;
+  margin-left: 54px;
+
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    margin-left: 200px;
+  }
+}
+.menu__contacts {
+  margin-top: 70px;
+  list-style-type: none;
+}
+.menu__list1 {
+  display: flex;
+  margin-top: 64px;
+  margin-left: 40px;
+}
+.menu__social {
+  color: #2196f3;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.22;
+  letter-spacing: 0.02;
+  margin-right: 20px;
+  text-decoration: none;
+}
+.menu__button1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  border: none;
+
+  & :hover,
+  & :focus {
+    fill: #2196f3;
+  }
+}
+.menu__mail1 {
+  @media screen and (min-width: 1200px) {
+    margin-left: 30px;
+  }
 }

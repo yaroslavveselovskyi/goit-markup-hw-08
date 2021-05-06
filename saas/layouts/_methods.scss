@@ -1,35 +1,92 @@
 .methods {
-  --grid-item: 4;
-  display: flex;
-  padding-right: -30px;
+  display: block;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 .methods__item {
-  margin-right: 30px;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  max-width: 450px;
+  --grid-item: 1;
+
+  @media screen and (min-width: 768px) {
+    --grid-item: 2;
+    max-width: 354px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    --grid-item: 4;
+    max-width: 270px;
+  }
+
+  &:not(:last-child) {
+    @media screen and (max-width: 767px) {
+      margin-bottom: 30px;
+    }
+  }
 }
-&::before {
+.methods__attention {
+  background-image: url(../img/icons/antenna.svg);
+  box-sizing: border-box;
   margin-bottom: 30px;
   display: block;
   content: "";
-  width: 270px;
+  width: 100%;
+  padding-left: auto;
+  padding-right: auto;
   height: 120px;
   background-repeat: no-repeat;
   background-position: center;
   background-color: #f5f4fa;
 }
-::before .icon {
+.methods__task {
+  background-image: url(../img/icons/clock.svg);
   box-sizing: border-box;
+  margin-bottom: 30px;
+  display: block;
+  content: "";
+  width: 100%;
+  padding-left: auto;
+  padding-right: auto;
+  height: 120px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #f5f4fa;
 }
-.methods__1::before {
-  background-image: url("../img/icons/sprite.svg#icon-antenna");
+.methods__planning {
+  background-image: url(../img/icons/diagram.svg);
+  box-sizing: border-box;
+  margin-bottom: 30px;
+  display: block;
+  content: "";
+  width: 100%;
+  padding-left: auto;
+  padding-right: auto;
+  height: 120px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #f5f4fa;
 }
-.methods__2::before {
-  background-image: url("../img/icons/sprite.svg#icon-clock");
-}
-.methods__3::before {
-  background-image: url("../img/icons/sprite.svg#icon-diagram");
-}
-.methods__4::before {
-  background-image: url("../img/icons/sprite.svg#icon-astronaut");
+.methods__technologies {
+  background-image: url(../img/icons/astronaut.svg);
+  box-sizing: border-box;
+  margin-bottom: 30px;
+  display: block;
+  content: "";
+  width: 100%;
+  padding-left: auto;
+  padding-right: auto;
+  height: 120px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #f5f4fa;
 }
 .methods__tittle {
   font-weight: 700;
@@ -38,4 +95,8 @@
   color: var(--tittle-color);
   text-transform: uppercase;
   margin-bottom: 10px;
+  text-align: center;
+}
+.methods__description {
+  justify-content: start;
 }

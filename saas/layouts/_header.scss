@@ -11,8 +11,13 @@
 }
 .header__container {
   display: flex;
+  position: relative;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
+
+  & .navigation {
+    position: relative;
+  }
 }
 .header__logo {
   margin-right: 90px;
@@ -27,15 +32,16 @@
   align-items: center;
   padding-top: 32px;
   padding-bottom: 32px;
-}
-& .icon {
-  width: 16px;
-  height: 16px;
-  stroke: inherit;
-  margin-right: 10px;
-  transition: fill var(--animation);
-}
-&:hover .icon,
-&:focus .icon {
-  fill: var(--accent-color);
+
+  .icon {
+    width: 16px;
+    height: 16px;
+    stroke: inherit;
+    margin-right: 10px;
+    transition: fill var(--animation);
+  }
+  &:hover .icon,
+  &:focus .icon {
+    fill: var(--accent-color);
+  }
 }

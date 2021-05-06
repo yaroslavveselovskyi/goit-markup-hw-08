@@ -1,12 +1,13 @@
 .social-icons {
   display: inline-flex;
   padding-right: -10px;
-}
-& .icon {
-  width: 20px;
-  height: 20px;
-  fill: rgba(0, 0, 0, 0.25);
-  transition: fill var(--animation);
+
+  .icon {
+    width: 20px;
+    height: 20px;
+    fill: rgba(0, 0, 0, 0.25);
+    transition: fill var(--animation);
+  }
 }
 .social-icons__link {
   display: flex;
@@ -15,16 +16,18 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background-color: var(--section__background-text-color);
+  background-color: var(--background-text-color);
   transition: color var(--animation), background-color var(--animation);
-}
-&:hover .icon,
-&:focus .icon {
-  fill: var(--section__background-text-color);
-}
-&:hover,
-&:focus {
-  background-color: var(--accent-color);
+
+  &:hover .icon,
+  &:focus .icon {
+    fill: var(--background-text-color);
+  }
+
+  &:hover,
+  &:focus {
+    background-color: var(--accent-color);
+  }
 }
 .social-icons__item {
   margin-right: 10px;

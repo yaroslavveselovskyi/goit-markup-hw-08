@@ -9,10 +9,11 @@ textarea {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
-}
-&:focus-within > .form__icon {
-  fill: var(--accent-color);
-  transition: fill var(--animation);
+
+  &:focus-within > .form__icon {
+    fill: var(--accent-color);
+    transition: fill var(--animation);
+  }
 }
 .form__icon {
   position: absolute;
@@ -34,17 +35,18 @@ textarea {
   padding: 12px 42px;
   border-radius: 4px;
   border: 1px solid rgba(33, 33, 33, 0.2);
-}
-&:focus {
-  outline-color: var(--accent-color);
-  transition: outline-color var(--animation);
-}
-&::placeholder {
-  color: rgba(117, 117, 117, 0.5);
-  text-align: left;
-  font-size: 12px;
-  line-height: 1.16;
-  letter-spacing: 0.01em;
+
+  &:focus {
+    outline-color: var(--accent-color);
+    transition: outline-color var(--animation);
+  }
+  ::placeholder {
+    color: rgba(117, 117, 117, 0.5);
+    text-align: left;
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+  }
 }
 .form__tittle {
   font-weight: 700;
@@ -64,7 +66,7 @@ textarea {
   margin-right: auto;
   margin-top: 30px;
   background-color: var(--accent-color);
-  color: var(--section__background-text-color);
+  color: var(--background-text-color);
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
@@ -78,10 +80,11 @@ textarea {
   margin-bottom: 10px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-}
-&:focus {
-  outline-color: var(--accent-color);
-  transition: outline-color var(--animation);
+
+  &:focus {
+    outline-color: var(--accent-color);
+    transition: outline-color var(--animation);
+  }
 }
 .checkbox {
   color: var(--main-text-color);
@@ -98,23 +101,24 @@ textarea {
   overflow: hidden;
   clip: rect(0 0 0 0);
   cursor: pointer;
-}
-&:checked + .checkbox__icon {
-  border-color: var(--accent-color);
-  background-color: var(--accent-color);
-  background-image: url("data:image/svg+xml,%3Csvg width='16' height='15' viewBox='0 0 16 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='16' height='15' rx='2' fill='%232196F3'/%3E%3Cpath d='M3.95703 7.75166L3.88825 7.68604L3.81923 7.75141L2.93123 8.59258L2.85486 8.66492L2.93097 8.73753L6.42671 12.0724L6.49574 12.1382L6.56476 12.0724L14.069 4.91352L14.1449 4.84116L14.069 4.76881L13.1873 3.92764L13.1183 3.86183L13.0493 3.92761L6.49577 10.1735L3.95703 7.75166Z' fill='white' stroke='white' stroke-width='0.2'/%3E%3C/svg%3E");
-  background-origin: border-box;
-  transition: border-color background-color var(--animation);
-}
-&:focus + .checkbox__icon {
-  border-color: var(--accent-color);
+
+  &:checked + .checkbox__icon {
+    border-color: var(--accent-color);
+    background-color: var(--accent-color);
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='15' viewBox='0 0 16 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='16' height='15' rx='2' fill='%232196F3'/%3E%3Cpath d='M3.95703 7.75166L3.88825 7.68604L3.81923 7.75141L2.93123 8.59258L2.85486 8.66492L2.93097 8.73753L6.42671 12.0724L6.49574 12.1382L6.56476 12.0724L14.069 4.91352L14.1449 4.84116L14.069 4.76881L13.1873 3.92764L13.1183 3.86183L13.0493 3.92761L6.49577 10.1735L3.95703 7.75166Z' fill='white' stroke='white' stroke-width='0.2'/%3E%3C/svg%3E");
+    background-origin: border-box;
+    transition: border-color background-color var(--animation);
+  }
+  &:focus + .checkbox__icon {
+    border-color: var(--accent-color);
+  }
 }
 .checkbox__icon {
   position: absolute;
   width: 16px;
   height: 15px;
   border: 2px solid #000;
-  background-color: var(--section__background-text-color);
+  background-color: var(background-text-color);
   border-radius: 4px;
   transform: translateX(-23px);
   cursor: pointer;

@@ -13,6 +13,9 @@ body {
   letter-spacing: 0.03em;
   color: var(--main-text-color);
 }
+body.modal-open {
+  overflow: hidden;
+}
 h1,
 h2,
 h3,

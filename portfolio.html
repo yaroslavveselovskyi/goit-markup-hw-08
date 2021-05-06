@@ -2,12 +2,12 @@
 <html lang="ru">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewpoint" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title> Document </title>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/0.2.0/modern-normalize.min.css" />
-        <link rel="stylesheet" href="./css/style.css" />
+        <link rel="stylesheet" href="./css/style.min.css" />
     </head>
     <body>
         <!-- Шапка сайта -->
@@ -15,25 +15,38 @@
             <div class="container header__container">
                 <nav class="navigation">
                     <a class="link logo header__logo" href="./index.html"><span class="logo__1">Web</span><span class="logo__2">Studio</span>
-                    </a>
-                    <ul class="list menu link__header">
-                        <li><a class="link contacts__link" href="./index.html">Студия</a></li>
-                        <li class="menu__link"><a href="./portfolio.html" class="link__current">Портфолио</a></li>
-                        <li class="menu__link"><a class="link contacts__link" href="#contacts">Контакты</a></li>
-                    </ul>
+                    </a> 
+                    <button 
+                    type="button" 
+                    class="menu__button"
+                    aria-expanded="false"
+                    aria-controls="menu__container"
+                    data-menu__button>
+                        <svg width="40" height="40" aria-label="Переключатель мобильного меню">
+                            <use class="icon__menu" href="./img/icons/sprite.svg#icon-menu"></use>
+                        </svg>
+                    </button>
+                    <div class="menu__overlay">
+                                <ul class="list menu link__header">
+                                    <li> <a class="link contacts__link" href="./index.html">Студия</a></li>
+                                    <li class="menu__link"><a href="./portfolio.html" class="link__current">Портфолио</a></li>
+                                    <li class="menu__link"><a class="link contacts__link" href="#contacts">Контакты</a></li>
+                                </ul>
+                                <div class="menu__tel">
+                                    <a class="link contacts__link menu__mail1" href="mailto:info@devstudio.com">
+                                        <svg class="icon">
+                                            <use href="./img/icons/sprite.svg#icon-envelope"></use>
+                                        </svg>
+                                    info@devstudio.com</a>
+                                    <a class="link contacts__link" href="tel:+380961111111">
+                                        <svg class="icon">
+                                            <use href="./img/icons/sprite.svg#icon-smartphone"></use>
+                                        </svg>
+                                    +380961111111</a>
+                                    </li>
+                                </div>
+                    </div>
                 </nav> 
-                <ul class="list menu">
-                    <li class=""><a class="link contacts__link" href="mailto:info@devstudio.com">
-                        <svg class="icon">
-                            <use href="./img/icons/sprite.svg#icon-envelope"></use>
-                        </svg>
-                        info@devstudio.com</a></li>
-                    <li class="menu__link"><a class="link contacts__link" href="tel:+380961111111">
-                        <svg class="icon">
-                            <use href="./img/icons/sprite.svg#icon-smartphone"></use>
-                        </svg>
-                        +380961111111</a></li>
-                </ul> 
             </div> 
         </header>
         <main>
@@ -63,7 +76,15 @@
                         <li class="item">
                             <a href="" class="card__link">
                                 <div class="portfolio__card">
-                                    <img src="./img/img8.jpg" width="370" height="294" alt="Технокряк">
+                                    <picture>
+                                        <source  srcset="./img/desktop/img8.jpg 1x, ./img/desktop/img8x2.jpg 2x"
+                                        media="(min-width: 1200px)" type="image/jpeg"/>
+                                        <source  srcset="./img/tablet/img8tabx1.jpg 1x, ./img/tablet/img8tabx2.jpg 2x"
+                                        media="(min-width: 768px)" type="image/jpeg"/>
+                                        <source  srcset="./img/mobile/img8mobx1.jpg 1x, ./img/mobile/img8mobx2.jpg 2x"
+                                        media="(max-width: 767px)" type="image/jpeg"/>
+                                    <img src="./img/img8.jpg" width="450" alt="Технокряк">
+                                    </picture>
                                     <div class="portfolio__background">
                                         <h3 class="visually-hidden">portfolio__background</h3>
                                         <p class="portfolio__description">
@@ -81,7 +102,15 @@
                         <li class="item">
                             <a href="" class="card__link">
                                 <div class="portfolio__card">
-                                    <img src="./img/img9.jpg" width="370" height="294" alt="Постер New Orlean vs Golden State">
+                                    <picture>
+                                        <source  srcset="./img/desktop/img9.jpg 1x, ./img/desktop/img9x2.jpg 2x"
+                                        media="(min-width: 1200px)" type="image/jpeg"/>
+                                        <source  srcset="./img/tablet/img9tabx1.jpg 1x, ./img/tablet/img9tabx2.jpg 2x"
+                                        media="(min-width: 768px)" type="image/jpeg"/>
+                                        <source  srcset="./img/mobile/img9mobx1.jpg 1x, ./img/mobile/img9mobx2.jpg 2x"
+                                        media="(max-width: 767px)" type="image/jpeg"/>
+                                        <img src="./img/img9.jpg" width="450" alt="Постер New Orlean vs Golden State">
+                                    </picture>
                                     <div class="portfolio__background">
                                         <h3 class="visually-hidden">portfolio__background</h3>
                                         <p class="portfolio__description"></p>
@@ -97,7 +126,15 @@
                         <li class="item">
                             <a href="" class="card__link">
                                 <div class="portfolio__card">
-                                    <img src="./img/img10.jpg" width="370" height="294" alt="Ресторан Seafood">
+                                    <picture>
+                                        <source  srcset="./img/desktop/img10.jpg 1x, ./img/desktop/img10x2.jpg 2x"
+                                        media="(min-width: 1200px)" type="image/jpeg"/>
+                                        <source  srcset="./img/tablet/img10tabx1.jpg 1x, ./img/tablet/img10tabx2.jpg 2x"
+                                        media="(min-width: 768px)" type="image/jpeg"/>
+                                        <source  srcset="./img/mobile/img10mobx1.jpg 1x, ./img/mobile/img10mobx2.jpg 2x"
+                                        media="(max-width: 767px)" type="image/jpeg"/>
+                                        <img src="./img/img10.jpg" width="450" alt="Ресторан Seafood">
+                                    </picture>
                                     <div class="portfolio__background">
                                         <h3 class="visually-hidden">portfolio__background</h3>
                                         <p class="portfolio__description"></p>
@@ -113,7 +150,15 @@
                         <li class="item">
                             <a href="" class="card__link">
                                 <div class="portfolio__card">
-                                    <img src="./img/img11.jpg" width="370" height="294" alt="Проект Prime">
+                                    <picture>
+                                        <source  srcset="./img/desktop/img11.jpg 1x, ./img/desktop/img11x2.jpg 2x"
+                                        media="(min-width: 1200px)" type="image/jpeg"/>
+                                        <source  srcset="./img/tablet/img11tabx1.jpg 1x, ./img/tablet/img11tabx2.jpg 2x"
+                                        media="(min-width: 768px)" type="image/jpeg"/>
+                                        <source  srcset="./img/mobile/img11mobx1.jpg 1x, ./img/mobile/img11mobx2.jpg 2x"
+                                        media="(max-width: 767px)" type="image/jpeg"/>
+                                        <img src="./img/img11.jpg" width="450" alt="Проект Prime">
+                                    </picture>
                                     <div class="portfolio__background">
                                         <h3 class="visually-hidden">portfolio__background</h3>
                                         <p class="portfolio__description"></p>
@@ -129,7 +174,15 @@
                         <li class="item">
                             <a href="" class="card__link">
                                 <div class="portfolio__card">
-                                    <img src="./img/img12.jpg" width="370" height="294" alt="Проект Boxes">
+                                    <picture>
+                                        <source  srcset="./img/desktop/img12.jpg 1x, ./img/desktop/img12x2.jpg 2x"
+                                        media="(min-width: 1200px)" type="image/jpeg"/>
+                                        <source  srcset="./img/tablet/img12tabx1.jpg 1x, ./img/tablet/img12tabx2.jpg 2x"
+                                        media="(min-width: 768px)" type="image/jpeg"/>
+                                        <source  srcset="./img/mobile/img12mobx1.jpg 1x, ./img/mobile/img12mobx2.jpg 2x"
+                                        media="(max-width: 767px)" type="image/jpeg"/>
+                                        <img src="./img/img12.jpg" width="450" alt="Проект Boxes">
+                                    </picture>
                                     <div class="portfolio__background">
                                         <h3 class="visually-hidden">portfolio__background</h3>
                                         <p class="portfolio__description"></p>
@@ -145,7 +198,15 @@
                         <li class="item">
                             <a href="" class="card__link">
                                 <div class="portfolio__card">
-                                    <img src="./img/img13.jpg" width="370" height="294" alt="Inspiration has no Borders">
+                                    <picture>
+                                        <source  srcset="./img/desktop/img13.jpg 1x, ./img/desktop/img13x2.jpg 2x"
+                                        media="(min-width: 1200px)" type="image/jpeg"/>
+                                        <source  srcset="./img/tablet/img13tabx1.jpg 1x, ./img/tablet/img13tabx2.jpg 2x"
+                                        media="(min-width: 768px)" type="image/jpeg"/>
+                                        <source  srcset="./img/mobile/img13mobx1.jpg 1x, ./img/mobile/img13mobx2.jpg 2x"
+                                        media="(max-width: 767px)" type="image/jpeg"/>
+                                        <img src="./img/img13.jpg" width="450" alt="Inspiration has no Borders">
+                                    </picture>
                                     <div class="portfolio__background">
                                         <h3 class="visually-hidden">portfolio__background</h3>
                                         <p class="portfolio__description"></p>
@@ -161,7 +222,15 @@
                         <li class="item">
                             <a href="" class="card__link">
                             <div class="portfolio__card">
-                                <img src="./img/img14.jpg" width="370" height="294" alt="Издание Limited Edition">
+                                <picture>
+                                    <source  srcset="./img/desktop/img14.jpg 1x, ./img/desktop/img14x2.jpg 2x"
+                                    media="(min-width: 1200px)" type="image/jpeg"/>
+                                    <source  srcset="./img/tablet/img14tabx1.jpg 1x, ./img/tablet/img14tabx2.jpg 2x"
+                                    media="(min-width: 768px)" type="image/jpeg"/>
+                                    <source  srcset="./img/mobile/img14mobx1.jpg 1x, ./img/mobile/img14mobx2.jpg 2x"
+                                    media="(max-width: 767px)" type="image/jpeg"/>
+                                    <img src="./img/img14.jpg" width="450" alt="Издание Limited Edition">
+                                </picture>
                                 <div class="portfolio__background">
                                     <h3 class="visually-hidden">portfolio__background</h3>
                                     <p class="portfolio__description"></p>
@@ -177,7 +246,15 @@
                         <li class="item">
                             <a href="" class="card__link">
                                 <div class="portfolio__card">
-                                    <img src="./img/img15.jpg" width="370" height="294" alt="Проект LAB">
+                                    <picture>
+                                        <source  srcset="./img/desktop/img15.jpg 1x, ./img/desktop/img15x2.jpg 2x"
+                                        media="(min-width: 1200px)" type="image/jpeg"/>
+                                        <source  srcset="./img/tablet/img15tabx1.jpg 1x, ./img/tablet/img15tabx2.jpg 2x"
+                                        media="(min-width: 768px)" type="image/jpeg"/>
+                                        <source  srcset="./img/mobile/img15mobx1.jpg 1x, ./img/mobile/img15mobx2.jpg 2x"
+                                        media="(max-width: 767px)" type="image/jpeg"/>
+                                        <img src="./img/img15.jpg" width="450" alt="Проект LAB">
+                                    </picture>
                                     <div class="portfolio__background">
                                         <h3 class="visually-hidden">portfolio__background</h3>
                                         <p class="portfolio__description"></p>
@@ -193,7 +270,15 @@
                         <li class="item">
                             <a href="" class="card__link">
                                 <div class="portfolio__card">
-                                    <img src="./img/img16.jpg" width="370" height="294" alt="Growing Business">
+                                    <picture>
+                                        <source  srcset="./img/desktop/img16.jpg 1x, ./img/desktop/img16x2.jpg 2x"
+                                        media="(min-width: 1200px)" type="image/jpeg"/>
+                                        <source  srcset="./img/tablet/img16tabx1.jpg 1x, ./img/tablet/img16tabx2.jpg 2x"
+                                        media="(min-width: 768px)" type="image/jpeg"/>
+                                        <source  srcset="./img/mobile/img65mobx1.jpg 1x, ./img/mobile/img16mobx2.jpg 2x"
+                                        media="(max-width: 767px)" type="image/jpeg"/>
+                                        <img src="./img/img16.jpg" width="450" alt="Growing Business">
+                                    </picture>
                                     <div class="portfolio__background">
                                         <h3 class="visually-hidden">portfolio__background</h3>
                                         <p class="portfolio__description"></p>
@@ -223,7 +308,7 @@
                         </ul>
                     </footer__address>
                 </div>
-                <div class="social">
+                <div class="social footer__item">
                     <p class="footer-icons__tittle">присоединяйтесь</p>
                     <ul class="list footer-icons">
                         <li class="footer-icons__item">
@@ -256,18 +341,22 @@
                         </li>
                     </ul>
                 </div>
-                <form class="subscribe">
-                    <label class="subscribe__label">
-                        Подпишитесь на рассылку
-                        <input class="subscribe__input" type="email" name="mail"  id="mail" placeholder="E-mail" />
-                    </label>
-                    <button class="subscribe__button" type="subscribe">
-                        Подписаться
-                        <svg class="subscribe__icon">
-                            <use href="./img/icons/sprite.svg#icon-send"></use>
-                        </svg>
-                    </button>
-                </form>
+                <div class="footer__item">
+                    <form class="subscribe">
+                        <div class="footer__button">
+                      <label class="subscribe__label">
+                            Подпишитесь на рассылку
+                            <input class="subscribe__input" type="email" name="mail"  id="mail" placeholder="E-mail" />
+                        </label>
+                        <button class="subscribe__button" type="subscribe">
+                            Подписаться
+                            <svg class="subscribe__icon">
+                                <use href="./img/icons/sprite.svg#icon-send"></use>
+                            </svg>
+                        </button>
+                        </div>
+                    </form>
+                </div>  
             </div>
         </footer>
     </body>
