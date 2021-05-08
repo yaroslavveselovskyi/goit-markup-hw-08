@@ -23,18 +23,21 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  width: 528px;
-  min-height: 581px;
+  max-width: 450px;
   border-radius: 4px;
   background-color: var(--background-text-color);
   box-shadow: var(--box-shadow);
 
-  @media (min-width: 768px) {
+  @media (min-width: 480px) {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 500px;
+    width: 450px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 528px;
   }
 }
 .btn-close {

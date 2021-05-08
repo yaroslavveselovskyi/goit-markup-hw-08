@@ -4,15 +4,29 @@
 .menu__link {
   margin-left: 50px;
 }
+.navigation {
+  position: relative;
+}
 .menu__button {
   display: inline-flex;
+  position: absolute;
+  right: 0;
   margin: 0;
   padding: 0;
   border: none;
   background-color: transparent;
-  transform: translateX(400%);
+  transform: translateX(0%);
 
   @media screen and (min-width: 768px) {
+    display: none;
+  }
+
+  :hover .icon__menu,
+  :focus .icon__menu {
+    fill: var(--accent-color);
+  }
+
+  .icon__cross {
     display: none;
   }
 
@@ -20,26 +34,38 @@
     display: block;
     z-index: 5;
   }
+}
 
-  .is-open .icon__cross {
-    display: block;
+.menu__button.is-open .icon__cross {
+  display: block;
+  z-index: 10;
+  position: absolute;
+}
 
-    .icon__menu {
-      display: none;
-    }
-  }
+.menu__button.is-open .icon__menu {
+  display: none;
+}
 
-  :hover .icon__menu,
-  :focus .icon__menu {
-    fill: var(--accent-color);
-  }
+.menu__button.is-open .logo {
+  display: none;
+}
+:hover .icon__menu,
+:focus .icon__menu {
+  fill: var(--accent-color);
+}
+:hover .icon__cross,
+:focus .icon__cross {
+  fill: var(--accent-color);
+}
+.icon__cross {
+  z-index: 10;
+  position: absolute;
 }
 .menu__container {
   display: block;
   position: relative;
   flex-direction: column;
   top: 0;
-  right: -100%;
   width: 100%;
   height: 100vh;
   background-color: #fff;
@@ -50,16 +76,20 @@
   line-height: 1.17;
   letter-spacing: 0.02;
   color: rgb(33, 33, 33);
+  transform: translateY(3%);
+  z-index: 3;
 
   @media screen and (max-width: 767px) {
     display: none;
-    position: absolute;
-
-    left: 0;
-    width: 100%;
 
     &.is-open {
       display: block;
+    }
+
+    @media screen and (min-width: 480px) {
+      width: 480px;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 
@@ -71,8 +101,9 @@
 .menu__overlay {
   display: flex;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 767px) {
     display: none;
+    position: absolute;
   }
 }
 .menu__list {

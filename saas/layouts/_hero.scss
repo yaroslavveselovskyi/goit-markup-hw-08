@@ -1,18 +1,20 @@
-.section__background {
-  background-color: var(--background-color);
-}
 .overlay {
+  width: 100%;
   height: 100%;
   background-image: linear-gradient(
       to right,
       rgba(47, 48, 58, 0.4),
       rgba(47, 48, 58, 0.4)
     ),
-    url(../img/mobile/background_mobx1.png);
+    url(../img/desktop/background.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   box-shadow: var(--box-shadow);
+
+  @media screen and (min-width: 480px) {
+    width: 480px;
+  }
 
   @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
@@ -22,7 +24,7 @@
 
   @media screen and (min-width: 768px) {
     background-image: url(../img/tablet/background_tabx1.png);
-    max-width: 768px;
+    width: 768px;
 
     @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
@@ -33,17 +35,13 @@
 
   @media screen and (min-width: 1200px) {
     background-image: url(../img/desktop/background.png);
-    max-width: 1200px;
+    width: 1200px;
 
     @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
       background-image: url(../img/desktop/backgroundx2.png);
     }
-  }
-
-  @media screen and (max-width: 767px) {
-    max-width: 480px;
   }
 }
 .hero {

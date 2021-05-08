@@ -27,6 +27,11 @@
   --grid-item: 1;
   max-width: 450px;
 
+  @media screen and (min-width: 480px) {
+    --grid-item: 1;
+    width: 450px;
+  }
+
   @media screen and (min-width: 768px) {
     --grid-item: 2;
     width: 354px;

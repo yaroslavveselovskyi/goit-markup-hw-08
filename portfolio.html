@@ -24,6 +24,7 @@
                     data-menu__button>
                         <svg width="40" height="40" aria-label="Переключатель мобильного меню">
                             <use class="icon__menu" href="./img/icons/sprite.svg#icon-menu"></use>
+                            <use class="icon__cross" href="./img/icons/sprite.svg#icon-close-mobile"></use>
                         </svg>
                     </button>
                     <div class="menu__overlay">
@@ -49,6 +50,23 @@
                 </nav> 
             </div> 
         </header>
+        <div class="menu__container" data-menu>
+            <ul class="menu__list">
+                <li> <a class="link contacts__link" href="./index.html">Студия</a></li>
+                <li><a href="./portfolio.html" class="link contacts__link">Портфолио</a></li>
+                <li><a class="link contacts__link" href="#contacts">Контакты</a></li>
+            </ul>
+            <ul class="menu__contacts">
+                <li><a class="link contacts__link" href="tel:+380961111111">+380961111111</a></li>
+                <li><a class="link contacts__link menu__mail" href="mailto:info@devstudio.com">info@devstudio.com</a></li>
+            </ul>
+            <div class="menu__list1">
+                <a href="" class="menu__social">Instagram</a>
+                <a href="" class="menu__social">Twitter</a>
+                <a href="" class="menu__social">Facebook</a>
+                <a href="" class="menu__social">Linkedin</a>
+            </div>
+          </div>
         <main>
             <!-- Портфолио -->
             <section class="portfolio">
@@ -357,7 +375,23 @@
                         </div>
                     </form>
                 </div>  
-            </div>
+            </div>       
         </footer>
+        <script src="./js/mobile-menu.js"></script>
+        <script>
+            (() => {
+                document
+                .querySelector('.js-speaker-form')
+                .addEventListener('subscribe', e => {
+                    e.preventDefault();
+                    
+                    new FormData(e.currentTarget).forEach(value, name) =>
+                        console.log('${name}: ${value}'),
+                    );
+
+                    e.currentTarget.reset();
+                });
+            })();
+        </script>
     </body>
 </html>

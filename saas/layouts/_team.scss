@@ -2,7 +2,6 @@
   background-color: var(--background-text-color);
   display: block;
   justify-content: center;
-  margin-right: -30px;
 
   @media screen and (min-width: 768px) {
     display: flex;
@@ -18,14 +17,19 @@
   max-width: 450px;
   margin-bottom: 30px;
 
+  @media screen and (min-width: 480px) {
+    --grid-item: 1;
+    width: 450px;
+  }
+
   @media screen and (min-width: 768px) {
     --grid-item: 2;
-    max-width: 354px;
+    width: 354px;
   }
 
   @media screen and (min-width: 1200px) {
     --grid-item: 4;
-    max-width: 270px;
+    width: 270px;
   }
 }
 .team__member {
