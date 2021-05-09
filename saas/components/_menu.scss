@@ -5,7 +5,6 @@
   margin-left: 50px;
 }
 .navigation {
-  position: relative;
 }
 .menu__button {
   display: inline-flex;
@@ -38,8 +37,8 @@
 
 .menu__button.is-open .icon__cross {
   display: block;
-  z-index: 10;
-  position: absolute;
+  z-index: 4;
+  position: relative;
 }
 
 .menu__button.is-open .icon__menu {
@@ -58,8 +57,8 @@
   fill: var(--accent-color);
 }
 .icon__cross {
-  z-index: 10;
-  position: absolute;
+  position: relative;
+  z-index: 4;
 }
 .menu__container {
   display: block;
@@ -68,7 +67,7 @@
   top: 0;
   width: 100%;
   height: 100vh;
-  background-color: #fff;
+  background-color: rgb(355, 355, 355);
   padding: 48px, 40px;
   text-align: start;
   font-weight: 500;
@@ -76,26 +75,30 @@
   line-height: 1.17;
   letter-spacing: 0.02;
   color: rgb(33, 33, 33);
-  transform: translateY(3%);
+  transform: translateY(-11%);
   z-index: 3;
-
-  @media screen and (max-width: 767px) {
-    display: none;
-
-    &.is-open {
-      display: block;
-    }
-
-    @media screen and (min-width: 480px) {
-      width: 480px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
 
   @media screen and (min-width: 768px) {
     display: none;
   }
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+
+  &.is-open {
+    @media screen and (max-width: 767px) {
+      display: block;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.menu__container.is-open .logo__1 {
+  display: none;
 }
 
 .menu__overlay {
@@ -117,14 +120,33 @@
   line-height: 1.16;
   letter-spacing: 0.02;
   color: #757575;
+
+  @media screen and (min-width: 1200px) {
+  }
 }
 .menu__tel {
   display: block;
-  margin-left: 54px;
+  margin-right: 0;
+
+  @media screen and (min-width: 768px), (max-width: 1199px) {
+    margin-right: 0;
+    margin-left: 88px;
+    margin-top: 21px;
+  }
 
   @media screen and (min-width: 1200px) {
     display: flex;
-    margin-left: 200px;
+    margin-right: 30px;
+    justify-content: right;
+    margin-left: 120px;
+    margin-top: 15px;
+  }
+}
+.menu__tel .contacts__link {
+  @media screen and (min-width: 768px), (max-width: 1199px) {
+    margin-bottom: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
 .menu__contacts {
@@ -159,6 +181,6 @@
 }
 .menu__mail1 {
   @media screen and (min-width: 1200px) {
-    margin-left: 30px;
+    margin-right: 30px;
   }
 }

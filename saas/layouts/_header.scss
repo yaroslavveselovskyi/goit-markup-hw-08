@@ -11,21 +11,39 @@
 }
 .header__container {
   display: flex;
-  position: relative;
   align-items: center;
   justify-content: center;
 
-  & .navigation {
-    position: relative;
+  @media screen and (min-width: 768px), (max-width: 1199px) {
+    width: 768px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+.header .menu {
+  @media screen and (max-width: 767px) {
+    margin-left: 88px;
   }
 }
 .header__logo {
   margin-right: 90px;
+
+  @media screen and (max-width: 767px) {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  @media screen and (min-width: 768px), (max-width: 1199px) {
+    margin-right: 0;
+  }
 }
 .navigation {
   display: flex;
   align-items: center;
   margin-right: auto;
+
+  @media screen and (min-width: 768px), (max-width: 1199px) {
+  }
 }
 .contacts__link {
   display: flex;

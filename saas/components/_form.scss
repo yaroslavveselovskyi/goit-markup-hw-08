@@ -3,6 +3,10 @@ textarea {
 }
 .form {
   max-width: 450px;
+
+  @media screen and (min-width: 1200px) {
+    width: 450px;
+  }
 }
 .form__field {
   position: relative;
@@ -96,8 +100,14 @@ textarea {
   padding: 5px 0;
   position: relative;
   display: flex;
-  align-items: center;
-  transform: translateX(35px);
+  transform: translateX(20px);
+  font-size: 12px;
+  line-height: 1.16;
+
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+    line-height: 1.71;
+  }
 }
 .checkbox__input {
   position: absolute;

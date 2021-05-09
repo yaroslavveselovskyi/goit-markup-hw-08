@@ -13,7 +13,7 @@
   box-shadow: var(--box-shadow);
 
   @media screen and (min-width: 480px) {
-    width: 480px;
+    width: 100%;
   }
 
   @media (min-device-pixel-ratio: 2),
@@ -24,7 +24,6 @@
 
   @media screen and (min-width: 768px) {
     background-image: url(../img/tablet/background_tabx1.png);
-    width: 768px;
 
     @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
@@ -35,7 +34,7 @@
 
   @media screen and (min-width: 1200px) {
     background-image: url(../img/desktop/background.png);
-    width: 1200px;
+    max-width: 1600px;
 
     @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
