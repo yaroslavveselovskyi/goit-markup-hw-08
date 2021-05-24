@@ -15,6 +15,7 @@
   border: none;
   background-color: transparent;
   transform: translateX(0%);
+  z-index: 1000;
 
   @media screen and (min-width: 768px) {
     display: none;
@@ -60,68 +61,12 @@
   position: relative;
   z-index: 4;
 }
-.menu__container {
-  display: block;
-  position: relative;
-  flex-direction: column;
-  top: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: rgb(355, 355, 355);
-  padding: 48px, 40px;
-  text-align: start;
-  font-weight: 500;
-  font-size: 40px;
-  line-height: 1.17;
-  letter-spacing: 0.02;
-  color: rgb(33, 33, 33);
-  transform: translateY(-11%);
-  z-index: 3;
-
-  @media screen and (min-width: 768px) {
-    display: none;
-  }
-
-  @media screen and (max-width: 767px) {
-    display: none;
-  }
-
-  &.is-open {
-    @media screen and (max-width: 767px) {
-      display: block;
-    }
-  }
-
-  @media screen and (max-width: 767px) {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-.menu__container.is-open .logo__1 {
-  display: none;
-}
-
 .menu__overlay {
   display: flex;
 
   @media screen and (max-width: 767px) {
     display: none;
     position: absolute;
-  }
-}
-.menu__list {
-  text-decoration: none;
-  list-style-type: none;
-  margin-bottom: 30px;
-}
-.menu__mail {
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 1.16;
-  letter-spacing: 0.02;
-  color: #757575;
-
-  @media screen and (min-width: 1200px) {
   }
 }
 .menu__tel {
@@ -148,24 +93,6 @@
     padding-top: 0;
     padding-bottom: 0;
   }
-}
-.menu__contacts {
-  margin-top: 70px;
-  list-style-type: none;
-}
-.menu__list1 {
-  display: flex;
-  margin-top: 64px;
-  margin-left: 40px;
-}
-.menu__social {
-  color: #2196f3;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 1.22;
-  letter-spacing: 0.02;
-  margin-right: 20px;
-  text-decoration: none;
 }
 .menu__button1 {
   position: absolute;
