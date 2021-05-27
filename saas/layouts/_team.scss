@@ -8,6 +8,10 @@
     display: flex;
     flex-wrap: wrap;
   }
+
+  @media screen and (max-width: 1199px) {
+    margin-bottom: -30px;
+  }
 }
 .team__item {
   display: block;
@@ -31,6 +35,7 @@
   @media screen and (min-width: 1200px) {
     --grid-item: 4;
     width: 270px;
+    margin-bottom: 0;
   }
 }
 .team__member {

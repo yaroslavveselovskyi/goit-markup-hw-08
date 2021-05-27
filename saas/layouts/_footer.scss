@@ -17,20 +17,25 @@
 }
 .footer__container {
   display: block;
-  padding-top: 60px;
+  justify-content: center;
   padding-bottom: px;
   margin-left: auto;
   margin-right: auto;
 
+  @media screen and (max-width: 767px) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
   @media screen and (min-width: 768px) {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
   }
 
   @media screen and (min-width: 1200px) {
     width: 1200px;
-    justify-content: left;
+    justify-content: start;
   }
 }
 
@@ -38,7 +43,6 @@
   display: block;
   --grid-item: 1;
   text-align: center;
-  margin-bottom: 60px;
 
   @media screen and (min-width: 768px) {
     --grid-item: 2;
@@ -113,7 +117,6 @@
     width: 570px;
     align-items: start;
     justify-content: left;
-    margin-left: 93px;
   }
 }
 .subscribe__label {
@@ -166,7 +169,6 @@
   width: 200px;
   height: 50px;
   margin-top: 20px;
-
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
@@ -182,14 +184,11 @@
   cursor: pointer;
 
   @media screen and (max-width: 767px) {
-    margin-bottom: 60px;
   }
 
   @media screen and (min-width: 1200px) {
     min-width: 200px;
-    padding-left: 28px;
     text-align: start;
-    transform: translateX(0);
     transform: translateY(30%);
     margin-left: 12px;
   }
@@ -206,11 +205,42 @@
   }
 }
 .social {
+  @media screen and (max-width: 767px) {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
   @media screen and (min-width: 768px) {
-    margin-left: 50px;
+    margin-top: 65px;
+    margin-right: 83px;
   }
 
   @media screen and (min-width: 1200px) {
+    margin-top: 72px;
     margin-left: 70px;
+    margin-right: 93px;
+  }
+}
+.footer__page {
+  @media screen and (min-width: 768px) {
+    margin-top: 60px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    margin-left: 76px;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+}
+.footer__subscribe {
+  @media screen and (min-width: 768px) {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    margin-left: 162px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-top: 72px;
+    margin-left: 0;
   }
 }

@@ -2,14 +2,15 @@
   --grid-item: 5;
   padding-left: auto;
   padding-right: auto;
-  padding-top: 94px;
 
   @media screen and (max-width: 1199px) {
     padding-bottom: 60px;
+    padding-top: 60px;
   }
 
   @media screen and (min-width: 1200px) {
     padding-bottom: 94px;
+    padding-top: 94px;
   }
 }
 .portfolio__tittle {
@@ -44,7 +45,8 @@
   color: var(--background-text-color);
   opacity: 0;
   transition: opacity var(--animation);
-  transform: translateY(calc(-50% + 500px));
+  transition: transform var(--animation);
+  transform: translateY(0);
 
   .is-hidden {
     opacity: 0;

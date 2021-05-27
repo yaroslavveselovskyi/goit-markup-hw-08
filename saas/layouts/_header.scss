@@ -30,31 +30,21 @@
   }
 }
 .header__logo {
-  margin-right: 90px;
-  margin-left: 0;
-
   @media screen and (max-width: 767px) {
     margin-top: 16px;
     margin-bottom: 16px;
   }
 
-  @media screen and (min-width: 768px) and (max-width: 1199px) {
-    margin-right: 0;
+  @media screen and (min-width: 768px) {
+    margin-right: 88px;
   }
-}
-.navigation {
-  display: flex;
-  align-items: center;
-  margin-right: auto;
 
-  @media screen and (min-width: 768px) and (max-width: 1199px) {
+  @media screen and (min-width: 1200px) {
+    margin-right: 93px;
   }
 }
 .contacts__link {
   display: flex;
-  align-items: center;
-  padding-top: 32px;
-  padding-bottom: 32px;
 
   .icon {
     width: 16px;

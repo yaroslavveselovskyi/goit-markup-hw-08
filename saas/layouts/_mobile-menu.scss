@@ -1,12 +1,11 @@
 .menu__container {
   display: block;
-  position: absolute;
+  position: fixed;
   flex-direction: column;
   top: 0;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-color: rgb(355, 355, 355);
-  padding: 48px, 40px;
   text-align: start;
   font-weight: 500;
   font-size: 40px;
@@ -17,6 +16,7 @@
   overflow-x: scroll;
   overflow-y: scroll;
   padding-left: 40px;
+  padding-top: 48px;
 
   @media screen and (min-width: 768px) {
     display: none;
@@ -43,7 +43,6 @@
 .menu__list {
   text-decoration: none;
   list-style-type: none;
-  margin-bottom: 30px;
 }
 .menu__mail {
   font-weight: 500;
@@ -51,17 +50,20 @@
   line-height: 1.16;
   letter-spacing: 0.02;
   color: #757575;
+  margin-top: 32px;
 
   @media screen and (min-width: 1200px) {
   }
 }
 .menu__contacts {
-  margin-top: 70px;
+  margin-bottom: 64px;
+  font-size: 34px;
   list-style-type: none;
+  color: rgba(33, 150, 243, 1);
 }
 .menu__list1 {
   display: flex;
-  margin-top: 64px;
+  margin-right: -20px;
 }
 .menu__social {
   color: #2196f3;
@@ -71,4 +73,12 @@
   letter-spacing: 0.02;
   margin-right: 20px;
   text-decoration: none;
+}
+.menu__home {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 48px;
+}
+.menu__page {
+  margin-bottom: 32px;
 }

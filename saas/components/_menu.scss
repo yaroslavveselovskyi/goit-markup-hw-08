@@ -1,10 +1,33 @@
 .menu {
   display: flex;
+
+  @media screen and (min-width: 768px) {
+    margin-left: -50px;
+  }
 }
 .menu__link {
   margin-left: 50px;
 }
 .navigation {
+  display: flex;
+  position: relative;
+  align-items: center;
+
+  @media screen and (max-width: 479px) {
+    width: 100%;
+  }
+
+  @media screen and (min-width: 480px) {
+    width: 480px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 768px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 1200px;
+  }
 }
 .menu__button {
   display: inline-flex;
@@ -66,32 +89,48 @@
 
   @media screen and (max-width: 767px) {
     display: none;
-    position: absolute;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
   }
 }
 .menu__tel {
   display: block;
   margin-right: 0;
 
-  @media screen and (min-width: 768px), (max-width: 1199px) {
-    margin-right: 0;
-    margin-left: 88px;
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    position: absolute;
+    top: 0;
+    right: 0;
     margin-top: 21px;
   }
 
   @media screen and (min-width: 1200px) {
+    position: absolute;
+    top: 0;
+    right: 0;
     display: flex;
-    margin-right: 30px;
     justify-content: right;
-    margin-left: 120px;
-    margin-top: 15px;
+    margin-top: 32px;
   }
 }
 .menu__tel .contacts__link {
-  @media screen and (min-width: 768px), (max-width: 1199px) {
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
     margin-bottom: 10px;
-    padding-top: 0;
-    padding-bottom: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.02em;
+    color: rgba(117, 117, 117, 1);
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-weight: 500;
+    font-size: 14px;
   }
 }
 .menu__button1 {
