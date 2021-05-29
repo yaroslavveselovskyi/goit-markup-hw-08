@@ -61,9 +61,29 @@
   padding-right: 24px;
 }
 .item:hover .portfolio__background {
+  box-shadow: var(--box-shadow);
+  animation-name: changeColor;
+  animation-iteration-count: 1;
+  animation-play-state: paused;
   opacity: 1;
   transform: translateY(-100%);
   transition: transform var(--animation);
+}
+@keyframes changeColor {
+  0% {
+    opacity: 1;
+    transform: translateY(-100%);
+  }
+
+  50% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(-100%);
+  }
 }
 .card__link:focus .portfolio__background {
   opacity: 1;
@@ -76,10 +96,10 @@
   margin-left: auto;
   margin-right: auto;
   justify-content: start;
+  margin-bottom: -15px;
 
   @media screen and (min-width: 768px) {
     justify-content: center;
-    margin-bottom: 34px;
     margin-right: -8px;
   }
 }
@@ -88,5 +108,16 @@
   margin-bottom: 15px;
 
   @media screen and (min-width: 768px) {
+  }
+}
+.grid__card {
+  margin-bottom: 40px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 30px;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 50px;
   }
 }

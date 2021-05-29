@@ -28,7 +28,7 @@
                         </svg>
                     </button>
                     <div class="menu__overlay">
-                                <ul class="list menu link__header">
+                                <ul class="menu link__header">
                                     <li class="menu__link"> <a href="./index.html" class="link__current">Студия</a></li>
                                     <li class="menu__link"><a class="link contacts__link" href="./portfolio.html">Портфолио</a></li>
                                     <li class="menu__link"><a class="link contacts__link" href="#contacts">Контакты</a></li>
@@ -50,6 +50,17 @@
             </div> 
             <!-- Мобильное меню -->
             <div class="menu__container" id="menu__container" data-menu>
+                <button 
+                    type="button" 
+                    class="menu__button"
+                    aria-expanded="false"
+                    aria-controls="menu__container"
+                    data-menu__button>
+                        <svg width="40" height="40" aria-label="Переключатель мобильного меню">
+                            <use class="icon__menu" href="./img/icons/sprite.svg#icon-close-mobile"></use>
+                            <use class="icon__cross" href="./img/icons/sprite.svg#icon-close-mobile"></use>
+                        </svg>
+                </button>
                 <ul class="menu__list">
                     <li><a href="./index.html" class="link contacts__link menu__page">Студия</a></li>
                     <li><a class="link contacts__link menu__page" href="./portfolio.html">Портфолио</a></li>

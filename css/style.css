@@ -160,7 +160,6 @@ summary {
   --card-gap: 30px;
   --animation: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  --animation-direction: alternate;
 }
 
 html {
@@ -384,7 +383,7 @@ ul {
 
 .menu__button.is-open .icon__cross {
   display: block;
-  z-index: 4;
+  z-index: 0;
   position: relative;
 }
 
@@ -403,12 +402,12 @@ ul {
 
 :hover .icon__cross,
 :focus .icon__cross {
-  fill: var(--accent-color);
+  fill: #fff;
 }
 
 .icon__cross {
   position: relative;
-  z-index: 4;
+  z-index: 0;
 }
 
 .menu__overlay {
@@ -570,7 +569,7 @@ ul {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: -30px;
+  margin-bottom: -30px;
 }
 
 @media screen and (min-width: 768px) {
@@ -597,8 +596,6 @@ ul {
   transition: box-shadow var(--animation);
   --grid-item: 1;
   max-width: 450px;
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 30px;
 }
 
@@ -696,11 +693,11 @@ ul {
 
 .list {
   margin-top: 0;
-  margin-bottom: 0;
   padding-left: 0;
   list-style: none;
   text-decoration: none;
   font-style: normal;
+  margin-bottom: -30px;
 }
 
 .visually-hidden {
@@ -988,9 +985,28 @@ textarea {
 }
 
 .item:hover .portfolio__background {
+  box-shadow: var(--box-shadow);
+  animation-name: changeColor;
+  animation-iteration-count: 1;
+  animation-play-state: paused;
   opacity: 1;
   transform: translateY(-100%);
   transition: transform var(--animation);
+}
+
+@keyframes changeColor {
+  0% {
+    opacity: 1;
+    transform: translateY(-100%);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-100%);
+  }
 }
 
 .card__link:focus .portfolio__background {
@@ -1005,12 +1021,12 @@ textarea {
   margin-left: auto;
   margin-right: auto;
   justify-content: start;
+  margin-bottom: -15px;
 }
 
 @media screen and (min-width: 768px) {
   .grid {
     justify-content: center;
-    margin-bottom: 34px;
     margin-right: -8px;
   }
 }
@@ -1018,6 +1034,22 @@ textarea {
 .grid-item {
   margin-right: 8px;
   margin-bottom: 15px;
+}
+
+.grid__card {
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .grid__card {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .grid__card {
+    margin-bottom: 50px;
+  }
 }
 
 .header {
@@ -1108,7 +1140,7 @@ textarea {
   line-height: 1.17;
   letter-spacing: 0.02;
   color: #212121;
-  z-index: 3;
+  z-index: 5;
   overflow-x: scroll;
   overflow-y: scroll;
   padding-left: 40px;
@@ -1137,6 +1169,21 @@ textarea {
   .menu__container {
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+.menu__container.is-open .menu__button {
+  position: fixed;
+}
+
+.menu__container .menu__button {
+  top: 30px;
+  right: 30px;
+}
+
+@media screen and (min-width: 479px) {
+  .menu__container .menu__button {
+    right: calc((100vw - 440px) / 2);
   }
 }
 
@@ -1193,11 +1240,10 @@ textarea {
 .overlay {
   width: 100%;
   height: 100%;
-  background-image: url(../img/mobile/background_mobx1.png);
-  background: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4));
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../img/mobile/background_mobx1.png);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   box-shadow: var(--box-shadow);
 }
 
@@ -1209,40 +1255,36 @@ textarea {
 
 @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .overlay {
-    background: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4));
-    background-image: url(../img/mobile/background_mobx2.png);
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../img/mobile/background_mobx2.png);
     background-size: auto 400px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .overlay {
-    background-image: url(../img/tablet/background_tabx1.png);
-    background: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4));
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../img/tablet/background_tabx1.png);
+    max-width: 1200px;
   }
 }
 
 @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
   .overlay {
-    background: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4));
-    background-image: url(../img/tablet/background_tabx2.png);
-    background-size: auto 400px;
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../img/tablet/background_tabx2.png);
+    background-size: 1200px auto;
+    background-position: left top;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .overlay {
-    background-image: url(../img/desktop/background.png);
-    background: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4));
-    background-size: cover;
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../img/desktop/background.png);
     max-width: 1600px;
   }
 }
 
 @media screen and (min-width: 1200px) and (min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (min-resolution: 192dpi), screen and (min-width: 1200px) and (min-resolution: 2dppx) {
   .overlay {
-    background: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4));
-    background-image: url(../img/desktop/backgroundx2.png);
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../img/desktop/backgroundx2.png);
     background-size: auto 600px;
   }
 }
@@ -1479,6 +1521,7 @@ textarea {
 
 .methods__tittle {
   font-weight: 700;
+  font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.03em;
   color: #212121;
@@ -1616,8 +1659,13 @@ textarea {
   justify-content: space-around;
   list-style-type: none;
   flex-wrap: wrap;
-  margin-right: -30px;
   margin-bottom: -30px;
+}
+
+@media screen and (min-width: 480px) {
+  .clients {
+    margin-right: -30px;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -1628,9 +1676,11 @@ textarea {
 }
 
 .clients__icons {
-  display: flex;
+  display: block;
+  justify-content: center;
+  align-items: center;
   --grid-item: 2;
-  max-width: 210px;
+  width: 210px;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 30px;
@@ -1675,16 +1725,29 @@ textarea {
 
 .clients__link {
   outline: px solid #afb1b8;
-  width: 170px;
+  max-width: 210px;
   height: 90px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: auto;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 480px) {
   .clients__link {
-    max-width: 170px;
+    width: 210px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .clients__link {
+    width: 226px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .clients__link {
+    width: 170px;
   }
 }
 
